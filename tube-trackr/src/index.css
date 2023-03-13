@@ -1,0 +1,64 @@
+/* -- Global -- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+  background: url(./img/tube-map.png) no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  background-color: whitesmoke;
+  max-width: 50%;
+  margin: 30px auto;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 15px 0px rgba(122, 122, 122, 1);
+}
+
+.title {
+  text-align: center;
+}
+
+.lines-container {
+  max-width: 50%;
+  margin: 50px auto;
+  border-bottom: solid 1px #808080;
+}
+
+.line {
+  display: flex;
+  width: 100%;
+  border-top: solid 1px #808080;
+}
+
+.line-name {
+  flex: 50%;
+  padding: 10px;
+  color: white;
+  border-right: solid 1px #808080;
+}
+
+.line-status {
+  flex: 50%;
+  padding: 10px;
+}
+
+.btn-update {
+  color: lightslategrey;
+  float: right;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.update {
+  padding: 10px;
+  border-top: solid 1px #808080;
+}
