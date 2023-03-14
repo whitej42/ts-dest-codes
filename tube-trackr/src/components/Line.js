@@ -3,20 +3,22 @@ import { FaChevronDown } from "react-icons/fa";
 import Update from "./Update";
 
 function Line({ line, status }) {
+
+    // Set classes
     const nameClasses = `line-name ${line.toLowerCase().split(' ').join('-')}`;
     const statusClasses = `line-status ${status.toLowerCase().split(' ').join('-')}`;
 
-    const [updateIsOpen, setUpdateIsOpen] = useState(false)
-
-    function showUpdate() {
-        setUpdateIsOpen(true)
-    }
-
+    // Set update status
     const setUpdate = () => {
         if (status !== 'Good Service') {
             return true;
         }
     }
+
+    // Toggle update
+    const [updateOpen, setUpdateOpen] = useState(false)
+
+    // const [isActive, setIsActive] = useState(false)
 
     return (
         <div>
@@ -26,13 +28,15 @@ function Line({ line, status }) {
                 </div>
                 <div className={statusClasses}>
                     <label>{status}</label>
-                    {setUpdate() &&
-                        <FaChevronDown className="btn-update" onClick={showUpdate} />
-                    }
+                    <div className="btn-icon" onClick={()=>setUpdateOpen(!updateOpen)}>
+                        {setUpdate() &&
+                            <FaChevronDown />
+                        }
+                    </div>
                 </div>
             </div>
             <div>
-                {updateIsOpen && <Update />}
+                {updateOpen && <Update />}
             </div>
         </div>
     )

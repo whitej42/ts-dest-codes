@@ -23,6 +23,13 @@ body {
   box-shadow: 0px 0px 15px 0px rgba(122, 122, 122, 1);
 }
 
+.btn-icon {
+  color: lightslategrey;
+  float: right;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
 .title {
   text-align: center;
 }
@@ -51,14 +58,8 @@ body {
   padding: 10px;
 }
 
-.btn-update {
-  color: lightslategrey;
-  float: right;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
 .update {
   padding: 10px;
   border-top: solid 1px #808080;
+  background-color: rgb(255, 255, 153, 0.5);
 }
