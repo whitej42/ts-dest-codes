@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { FaChevronDown } from "react-icons/fa";
 import Update from "./Update";
 
-function Line({ line, status }) {
+function Line({ lineName, status}) {
 
     // Set classes
-    const nameClasses = `line-name ${line.toLowerCase().split(' ').join('-')}`;
+    const nameClasses = `line-name ${lineName.toLowerCase().split(' ').join('-')}`;
     const statusClasses = `line-status ${status.toLowerCase().split(' ').join('-')}`;
 
     // Set update status
@@ -24,7 +24,8 @@ function Line({ line, status }) {
         <div>
             <div className='line'>
                 <div className={nameClasses}>
-                    <label>{line.split('and').join('&')}</label>
+                    {/* replace with & */}
+                    <label>{lineName.split('and').join('&')}</label>
                 </div>
                 <div className={statusClasses}>
                     <label>{status}</label>
