@@ -1,44 +1,48 @@
-import { useState } from 'react';
-import { FaChevronDown } from "react-icons/fa";
-import Update from "./Update";
+import { useState, useEffect } from 'react';
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import Update from './Update';
 
-function Line({ lineName, status}) {
+function Line({ lineName, description, update }) {
 
     // Set classes
     const nameClasses = `line-name ${lineName.toLowerCase().split(' ').join('-')}`;
-    const statusClasses = `line-status ${status.toLowerCase().split(' ').join('-')}`;
+    const statusClasses = `line-status ${description.toLowerCase().split(' ').join('-')}`;
 
-    // Set update status
-    const setUpdate = () => {
-        if (status !== 'Good Service') {
-            return true;
-        }
-    }
+    // Toggle show updates
+    const [toggle, setToggle] = useState(false);
 
-    // Toggle update
-    const [updateOpen, setUpdateOpen] = useState(false)
+    const handleClick = () => {
+        setToggle(!toggle);
+    };
 
-    // const [isActive, setIsActive] = useState(false)
+    const [showUpdate, setShowUpdate] = useState(false);
+
+    useEffect(
+        function getUpdates() {
+            if (description !== 'Good Service') {
+                console.log(description)
+                setShowUpdate(true)
+            }
+        },
+        []
+    );
 
     return (
         <div>
             <div className='line'>
                 <div className={nameClasses}>
-                    {/* replace with & */}
                     <label>{lineName.split('and').join('&')}</label>
                 </div>
                 <div className={statusClasses}>
-                    <label>{status}</label>
-                    <div className="btn-icon" onClick={()=>setUpdateOpen(!updateOpen)}>
-                        {setUpdate() &&
-                            <FaChevronDown />
-                        }
-                    </div>
+                    <label>{description}</label>
+                    {showUpdate ?
+                        <div className="btn-icon" onClick={ handleClick }>{ toggle ? <FaChevronUp /> : <FaChevronDown /> }</div>
+                        :
+                        <></>
+                    }
                 </div>
             </div>
-            <div>
-                {updateOpen && <Update />}
-            </div>
+            <Update update={update} isActive={toggle} />
         </div>
     )
 }

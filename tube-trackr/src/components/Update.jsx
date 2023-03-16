@@ -1,11 +1,15 @@
 import React from 'react'
 
-function Update() {
-  return (
-    <div className='update'>
-      Line Fucked
-    </div>
-  )
+function Update({ update, isActive }) {
+    return (
+        <>
+            {isActive && (
+                <div className='update'>
+                    {update}
+                </div>
+            )}
+        </>
+    )
 }
 
 export default Update

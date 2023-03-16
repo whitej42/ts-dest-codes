@@ -1,5 +1,5 @@
 import Line from "./Line";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from 'axios';
 
 // Test XML Data - CORS issue on Local
@@ -9,41 +9,60 @@ function Lines() {
 
     const [lineData, setLineData] = useState([]);
 
-    //// Get XML Data
-    const XmlParser = () => {
-        // var url = "http://cloud.tfl.gov.uk/TrackerNet/LineStatus"
-        axios
-            .get(XMLData, {
-                "Content-Type": "application/xml; charset=utf-8"
-            })
-            .then(function (response) {
-                const parsedXml = convertJson(response.data);
+    useEffect(
+        function getApiData() {
+            // Parse XML
+            axios
+                .get(XMLData, {
+                    "Content-Type": "application/xml; charset=utf-8"
+                })
+                .then(function (response) {
+                    const parsedXml = response.data;
+                    setLineData(getLineData(parsedXml));
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        },
+        []
+    );
 
-                // convertJson(response.data)
-                setLineData(parsedXml);
-                
-                console.log(parsedXml);
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }
+    // Get Line Data
+    function getLineData(xmlData) {
+        const xmlDoc = new DOMParser().parseFromString(xmlData, 'text/xml')
 
-    XmlParser()
+        var array = [];
+        const x = xmlDoc.getElementsByTagName("LineStatus");
 
-    // Convert to JSON
-    const convertJson = (parsedXml) => {
-        var convert = require('xml-js');
-        var parsedJson = convert.xml2json(parsedXml, { compact: true, spaces: 3 }).toLowerCase();
+        for (var i = 0; i < x.length; i++) {
 
-        return(parsedJson);
+            // Line object
+            var obj = {};
+
+            // Get line name
+            var lineList = x[i].getElementsByTagName("Line")[0];
+            obj["id"] = lineList.getAttribute("ID");
+            obj["lineName"] = lineList.getAttribute("Name");
+
+            // Get status description
+            var status = x[i].getElementsByTagName("Status")[0];
+            obj["description"] = status.getAttribute("Description");
+
+            // Get status update
+            obj["update"] = x[i].getAttribute("StatusDetails");
+
+            // Create line object
+            array.push(obj);
+            // console.log(obj)
+        }
+        return (array);
     }
 
     return (
         <div className='lines-container'>
             {lineData.map((line) => (
-                <Line lineName={line.LineStatus.Line.Name} status={line.LineStatus.Line.Status.Description} />
-            ))};
+                <Line key={line.id} lineName={line.lineName} description={line.description} update={line.update} />
+            ))}
         </div>
     );
 }

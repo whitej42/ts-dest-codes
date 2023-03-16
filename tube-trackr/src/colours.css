@@ -3,7 +3,7 @@
 .central {background-color: #dc241f;}
 .circle {background-color: #ffce00; color: #000;}
 .district {background-color: #007229;}
-.hammersmith-and-city-line {background-color: #d799af; color: #000;}
+.hammersmith-and-city {background-color: #d799af; color: #000;}
 .jubilee {background-color: #6a7278;}
 .metropolitan {background-color: #751056;}
 .northern {background-color: #000;}
@@ -19,4 +19,5 @@
 .good-service {color: #00cc66;}
 .minor-delays {color: #ff9900;}
 .part-suspended {color: #ff9900;}
+.suspended {color: #ff1a1a;}
 .severe-delays {color: #ff1a1a;}
