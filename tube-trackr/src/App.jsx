@@ -4,14 +4,12 @@ import Lines from "./components/Lines";
 function App() {
 
   return (
-    <div>
-      <div>
-        <Header />
-      </div>
+    <>
+      <Header />
       <div className='container'>
         <Lines />
       </div>
-    </div>
+    </>
   );
 }
 
