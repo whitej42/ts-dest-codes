@@ -1,11 +1,9 @@
 # Tube Tracker Website
-Website displaying live tube line status
+Website displaying live London Underground and National Rail line service status
 
 Built using React
 
 ## Getting Started
-Clone the repository
-
 Change into app directory
 ```
 cd tube-trackr
