@@ -30,23 +30,21 @@ body {
   padding: 2rem;
 }
 
-/* Line Status*/
-.btn-icon {
+/* Buttons */
+.btn {
   color: lightslategrey;
-  float: right;
   vertical-align: middle;
   cursor: pointer;
 }
 
-.title {
-  text-align: center;
-  color: #fff;
-  padding-bottom: 1rem;
+.btn:hover {
+  color: #FFF;
 }
 
+/* Line Status */
 .lines-container {
   background-color: #444444;
-  max-width: 25%;
+  max-width: 25%; 
   border-radius: 4px;
   padding: 2rem;
   margin-bottom: 1rem;
@@ -56,6 +54,10 @@ body {
   display: flex;
   width: 100%;
   border-top: solid 1px #808080;
+}
+
+.line label {
+  cursor: text;
 }
 
 .line-name {
@@ -69,12 +71,41 @@ body {
   padding: 10px;
 }
 
+.btn-show {
+  float: right;
+}
+
+.title {
+  text-align: center;
+  color: #fff;
+  padding-bottom: 1rem;
+}
+
 .update {
   padding: 10px;
   border-top: solid 1px #808080;
   background-color: rgb(250,245,225, 0.5);
 }
 
+/* Filters */
+.filters-container {
+  color: #FFF;
+  padding: 5px 0 5px 0;
+  /* border: solid #2E2E2E 1px; */
+}
+
+.filters {
+  margin-top: 5px;
+}
+
+.checkbox {
+  color: #FFF;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
+/* Footer */
 .footer {
   bottom: 0;
   width: 100%;
