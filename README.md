@@ -3,18 +3,19 @@ Website displaying live London Underground and National Rail line service status
 
 Built using React
 
+## Status
+Under Development.
+
 ## Getting Started
-Change into app directory
+1. Clone the repository
 ```
-cd tube-trackr
+git clone https://github.com/whitej42/Gorstella-Gallery.git
 ```
-
-Install dependencies
+2. Change into gorstella gallery directory
 ```
-npm install
+cd gorstella
 ```
-
-Start React development server
+3. Run the app in the development mode.
 ```
 npm start
 ```
