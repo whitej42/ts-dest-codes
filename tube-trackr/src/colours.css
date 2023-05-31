@@ -1,19 +1,46 @@
-/* Line Colours */
+/* Tube Colours */
 .bakerloo {background-color: #894e24;}
 .central {background-color: #dc241f;}
 .circle {background-color: #ffce00; color: #000;}
 .district {background-color: #007229;}
-.hammersmith-and-city {background-color: #d799af; color: #000;}
+.hammersmith-city {background-color: #d799af; color: #000;}
 .jubilee {background-color: #6a7278;}
 .metropolitan {background-color: #751056;}
 .northern {background-color: #000;}
 .piccadilly {background-color: #0019a8;}
 .victoria {background-color: #00a0e2; color: #000;}
-.waterloo-and-city {background-color: #76d0bd; color: #000;}
-.overground {background-color: #e86a10; color: #000;}
+.waterloo-city {background-color: #76d0bd; color: #000;}
+.london-overground {background-color: #e86a10; color: #000;}
 .elizabeth-line {background-color: #6950a1;}
 .dlr {background-color: #00afad; color: #000;}
-.trams {background-color: #66cc00;}
+.tram {background-color: #66cc00;}
+
+/* National Rail Colours */
+.avanti-west-coast {background-color: #1f4352}
+.c2c {background-color: #b10078;}
+.chiltern-railways {background-color: #1196ce;}
+.cross-country {background-color: #bc0043;}
+.east-midlands-railway {background-color: #492e45;}
+.first-hull-trains {background-color: #00326f;}
+.first-transpennine-express {background-color: #8b7fb7;}
+.gatwick-express {background-color: #d5081e;}
+.grand-central {background-color: #e87916;}
+.greater-anglia {background-color: #d31933;}
+.great-northern {background-color: #411659;}
+.great-western-railway {background-color: #0a473c;}
+.heathrow-express {background-color: #4f2c5e;}
+.island-line {background-color: #389cd2;}
+.london-north-eastern-railway {background-color: #c8122d;}
+.lumo {background-color: #0000ea;}
+.merseyrail {background-color: #f7ea00; color: #000;}
+.northern-rail {background-color: #222e5c;}
+.scotrail {background-color: #14377b;}
+.southeastern {background-color: #1c234f;}
+.southern {background-color: #7cbc40;}
+.south-western-railway {background-color: #199bce;}
+.thameslink {background-color: #e148b4;}
+.transport-for-wales {background-color: #f70000;}
+.west-midlands-trains {background-color: #f77f00;}
 
 /* Status Colours */
 .good-service {color: #00cc66;}
@@ -21,3 +48,5 @@
 .part-suspended {color: #ff9900;}
 .suspended {color: #ff1a1a;}
 .severe-delays {color: #ff1a1a;}
+.no-service {color: #ff1a1a;}
+.special-service {color: #ff9900;}

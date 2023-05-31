@@ -12,20 +12,25 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   /* background: url(./img/tube-map.png) no-repeat center center fixed;
   background-size: cover; */
-  background-color: #383838;
+  background-color: #222222;
 }
 
+/* Navbar */
 .header {
+  position: sticky;
+  top: 0;
   padding: 1rem;
   text-align: center;
   color: #fff;
+  background-color: #2E2E2E;
 }
 
+/* Body Container */
 .container {
-  background-color: #383838;
   padding: 2rem;
 }
 
+/* Line Status*/
 .btn-icon {
   color: lightslategrey;
   float: right;
@@ -40,11 +45,11 @@ body {
 }
 
 .lines-container {
-  max-width: 35%;
-  /* margin: 50px auto; */
+  background-color: #444444;
+  max-width: 25%;
+  border-radius: 4px;
   padding: 2rem;
-  border: solid 1px #808080;
-  /* box-shadow: 0px 0px 15px 0px rgb(48, 48, 48); */
+  margin-bottom: 1rem;
 }
 
 .line {
@@ -54,13 +59,13 @@ body {
 }
 
 .line-name {
-  flex: 50%;
+  flex: 60%;
   padding: 10px;
   color: white;
 }
 
 .line-status {
-  flex: 50%;
+  flex: 40%;
   padding: 10px;
 }
 
@@ -68,4 +73,13 @@ body {
   padding: 10px;
   border-top: solid 1px #808080;
   background-color: rgb(250,245,225, 0.5);
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  color: #FFF;
+  background-color: #2E2E2E;
+  text-align: center;
 }

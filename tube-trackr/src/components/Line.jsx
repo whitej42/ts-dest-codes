@@ -5,7 +5,7 @@ import Update from './Update';
 function Line({ lineName, description, update }) {
 
     // Set classes
-    const nameClasses = `line-name ${lineName.toLowerCase().split(' ').join('-')}`;
+    const nameClasses = `line-name ${lineName.toLowerCase().split(' & ').join(' ').split(' ').join('-')}`;
     const statusClasses = `line-status ${description.toLowerCase().split(' ').join('-')}`;
 
     // Toggle show updates
@@ -20,17 +20,16 @@ function Line({ lineName, description, update }) {
     useEffect(
         function getUpdates() {
             if (description !== 'Good Service') {
-                console.log(description)
                 setShowUpdate(true)
             }
         },[]
     );
 
     return (
-        <div>
+        <>
             <div className='line'>
                 <div className={nameClasses}>
-                    <label>{lineName.split('and').join('&')}</label>
+                    <label>{lineName}</label>
                 </div>
                 <div className={statusClasses}>
                     <label>{description}</label>
@@ -42,7 +41,7 @@ function Line({ lineName, description, update }) {
                 </div>
             </div>
             <Update update={update} isActive={toggle} />
-        </div>
+        </>
     )
 }
 
