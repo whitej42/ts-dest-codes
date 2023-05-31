@@ -23,8 +23,7 @@ function Line({ lineName, description, update }) {
                 console.log(description)
                 setShowUpdate(true)
             }
-        },
-        []
+        },[]
     );
 
     return (

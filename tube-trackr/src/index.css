@@ -33,8 +33,14 @@ body {
   cursor: pointer;
 }
 
+.title {
+  text-align: center;
+  color: #fff;
+  padding-bottom: 1rem;
+}
+
 .lines-container {
-  max-width: 25%;
+  max-width: 35%;
   /* margin: 50px auto; */
   padding: 2rem;
   border: solid 1px #808080;
