@@ -10,19 +10,27 @@ body {
   margin: 0;
   scroll-behavior: smooth;
   font-family: Arial, Helvetica, sans-serif;
-  background: url(./img/tube-map.png) no-repeat center center fixed;
-  background-size: cover;
+  /* background: url(./img/tube-map.png) no-repeat center center fixed;
+  background-size: cover; */
+  background-color: #222222;
 }
 
+/* Navbar */
+.header {
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  background-color: #2E2E2E;
+}
+
+/* Body Container */
 .container {
-  background-color: whitesmoke;
-  max-width: 50%;
-  margin: 30px auto;
   padding: 2rem;
-  border-radius: 5px;
-  box-shadow: 0px 0px 15px 0px rgba(122, 122, 122, 1);
 }
 
+/* Line Status*/
 .btn-icon {
   color: lightslategrey;
   float: right;
@@ -32,12 +40,16 @@ body {
 
 .title {
   text-align: center;
+  color: #fff;
+  padding-bottom: 1rem;
 }
 
 .lines-container {
-  max-width: 50%;
-  margin: 50px auto;
-  border-bottom: solid 1px #808080;
+  background-color: #444444;
+  max-width: 25%;
+  border-radius: 4px;
+  padding: 2rem;
+  margin-bottom: 1rem;
 }
 
 .line {
@@ -47,19 +59,27 @@ body {
 }
 
 .line-name {
-  flex: 50%;
+  flex: 60%;
   padding: 10px;
   color: white;
-  border-right: solid 1px #808080;
 }
 
 .line-status {
-  flex: 50%;
+  flex: 40%;
   padding: 10px;
 }
 
 .update {
   padding: 10px;
   border-top: solid 1px #808080;
-  background-color: rgb(255, 255, 153, 0.5);
+  background-color: rgb(250,245,225, 0.5);
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  color: #FFF;
+  background-color: #2E2E2E;
+  text-align: center;
 }
