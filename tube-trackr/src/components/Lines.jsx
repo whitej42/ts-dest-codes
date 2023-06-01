@@ -1,32 +1,33 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import Line from "./Line";
+import Status from "./Status";
 import Title from "./Title";
+import Filters from "./Filters";
 
 function Lines({ title, api_url }) {
 
     const [lineData, setLineData] = useState([]);
 
-    // Get Tube Line Data
+    // Get line data from API
     useEffect(
         function getLineData() {
             axios
                 .get(api_url, {
                 })
                 .then(function (response) {
-                    setLineData(constructLineData(response.data));
+                    setLineData(buildLineData(response.data));
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
-        },[]
+        }, []
     );
 
-    // Build Tube Line Data
-    function constructLineData(xmlData) {
+    // Convert API data to array
+    function buildLineData(apiData) {
 
         var array = [];
-        const x = xmlData
+        const x = apiData
 
         for (var i = 0; i < x.length; i++) {
 
@@ -46,15 +47,15 @@ function Lines({ title, api_url }) {
             // Create line object
             array.push(obj);
         }
-        console.log(array)
         return (array);
     }
 
     return (
-        <div className='lines-container'>
-            <Title text={title + " Status"}/>
+        <div className='status-container'>
+            <Title text={title + " Status"} />
+            <Filters lines={lineData} />
             {lineData.map((line) => (
-                <Line key={line.id} lineName={line.lineName} description={line.description} update={line.update} />
+                <Status key={line.id} lineName={line.lineName} description={line.description} update={line.update} />
             ))}
         </div>
     );

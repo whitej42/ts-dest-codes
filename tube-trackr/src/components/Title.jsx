@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Title( {text} ) {
+function Title({ text }) {
   return (
     <h2 className='title'>
-      { text }
+      {text}
     </h2>
   )
 }

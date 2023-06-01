@@ -46,7 +46,9 @@
 .good-service {color: #00cc66;}
 .minor-delays {color: #ff9900;}
 .part-suspended {color: #ff9900;}
+.special-service {color: #ff9900;}
+.part-closure {color: #ff9900;}
 .suspended {color: #ff1a1a;}
 .severe-delays {color: #ff1a1a;}
 .no-service {color: #ff1a1a;}
-.special-service {color: #ff9900;}
+.planned-closure {color: #ff1a1a;}

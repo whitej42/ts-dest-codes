@@ -1,6 +1,5 @@
-import React from 'react'
-
 function Update({ update, isActive }) {
+
     return (
         <>
             {isActive && (

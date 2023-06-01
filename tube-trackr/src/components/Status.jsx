@@ -2,19 +2,20 @@ import { useState, useEffect } from 'react';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Update from './Update';
 
-function Line({ lineName, description, update }) {
+function Status({ lineName, description, update }) {
 
-    // Set classes
+    // Set css classes
     const nameClasses = `line-name ${lineName.toLowerCase().split(' & ').join(' ').split(' ').join('-')}`;
     const statusClasses = `line-status ${description.toLowerCase().split(' ').join('-')}`;
 
-    // Toggle show updates
+    // Toggle show updates button
     const [toggle, setToggle] = useState(false);
 
     const handleClick = () => {
         setToggle(!toggle);
     };
 
+    // Show toggle status update button
     const [showUpdate, setShowUpdate] = useState(false);
 
     useEffect(
@@ -22,19 +23,19 @@ function Line({ lineName, description, update }) {
             if (description !== 'Good Service') {
                 setShowUpdate(true)
             }
-        },[]
+        }, []
     );
 
     return (
         <>
-            <div className='line'>
+            <div className='status'>
                 <div className={nameClasses}>
                     <label>{lineName}</label>
                 </div>
                 <div className={statusClasses}>
                     <label>{description}</label>
                     {showUpdate ?
-                        <div className="btn-icon" onClick={ handleClick }>{ toggle ? <FaChevronUp /> : <FaChevronDown /> }</div>
+                        <div className="btn" onClick={handleClick}>{toggle ? <FaChevronUp /> : <FaChevronDown />}</div>
                         :
                         <></>
                     }
@@ -45,4 +46,4 @@ function Line({ lineName, description, update }) {
     )
 }
 
-export default Line
+export default Status
