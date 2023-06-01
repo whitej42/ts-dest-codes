@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Update from './Update';
 
-function Line({ lineName, description, update }) {
+function Status({ lineName, description, update }) {
 
     // Set css classes
     const nameClasses = `line-name ${lineName.toLowerCase().split(' & ').join(' ').split(' ').join('-')}`;
@@ -28,14 +28,14 @@ function Line({ lineName, description, update }) {
 
     return (
         <>
-            <div className='line'>
+            <div className='status'>
                 <div className={nameClasses}>
                     <label>{lineName}</label>
                 </div>
                 <div className={statusClasses}>
                     <label>{description}</label>
                     {showUpdate ?
-                        <div className="btn btn-show" onClick={handleClick}>{toggle ? <FaChevronUp /> : <FaChevronDown />}</div>
+                        <div className="btn" onClick={handleClick}>{toggle ? <FaChevronUp /> : <FaChevronDown />}</div>
                         :
                         <></>
                     }
@@ -46,4 +46,4 @@ function Line({ lineName, description, update }) {
     )
 }
 
-export default Line
+export default Status

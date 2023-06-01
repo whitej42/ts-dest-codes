@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import Line from "./Line";
+import Status from "./Status";
 import Title from "./Title";
 import Filters from "./Filters";
 
@@ -51,11 +51,11 @@ function Lines({ title, api_url }) {
     }
 
     return (
-        <div className='lines-container'>
+        <div className='status-container'>
             <Title text={title + " Status"} />
-            <Filters />
+            <Filters lines={lineData} />
             {lineData.map((line) => (
-                <Line key={line.id} lineName={line.lineName} description={line.description} update={line.update} />
+                <Status key={line.id} lineName={line.lineName} description={line.description} update={line.update} />
             ))}
         </div>
     );

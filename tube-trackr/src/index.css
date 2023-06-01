@@ -10,9 +10,8 @@ body {
   margin: 0;
   scroll-behavior: smooth;
   font-family: Arial, Helvetica, sans-serif;
-  /* background: url(./img/tube-map.png) no-repeat center center fixed;
-  background-size: cover; */
   background-color: #222222;
+  color: #FFF;;
 }
 
 /* Navbar */
@@ -21,7 +20,6 @@ body {
   top: 0;
   padding: 1rem;
   text-align: center;
-  color: #fff;
   background-color: #2E2E2E;
 }
 
@@ -37,12 +35,8 @@ body {
   cursor: pointer;
 }
 
-.btn:hover {
-  color: #FFF;
-}
-
 /* Line Status */
-.lines-container {
+.status-container {
   background-color: #444444;
   max-width: 25%; 
   border-radius: 4px;
@@ -50,20 +44,18 @@ body {
   margin-bottom: 1rem;
 }
 
-.line {
+.status {
   display: flex;
-  width: 100%;
   border-top: solid 1px #808080;
 }
 
-.line label {
+.status label {
   cursor: text;
 }
 
 .line-name {
   flex: 60%;
   padding: 10px;
-  color: white;
 }
 
 .line-status {
@@ -71,38 +63,40 @@ body {
   padding: 10px;
 }
 
-.btn-show {
+.status .btn {
   float: right;
 }
 
 .title {
   text-align: center;
-  color: #fff;
   padding-bottom: 1rem;
 }
 
 .update {
   padding: 10px;
   border-top: solid 1px #808080;
-  background-color: rgb(250,245,225, 0.5);
+  color: #222222;
+  background-color: #faf5e1;;
 }
 
 /* Filters */
 .filters-container {
-  color: #FFF;
   padding: 5px 0 5px 0;
   /* border: solid #2E2E2E 1px; */
 }
 
 .filters {
   margin-top: 5px;
+  padding-top: 5px;
+  border-top: solid 1px #808080;
 }
 
-.checkbox {
+.dropdown {
   color: #FFF;
-  margin-left: 0.5rem;
-  margin-right: 1rem;
-  vertical-align: middle;
+  background-color: #444444;
+  font-size: 14px;
+  padding: 4px;
+  border-radius: 5px;
 }
 
 /* Footer */
@@ -110,7 +104,6 @@ body {
   bottom: 0;
   width: 100%;
   padding: 2rem;
-  color: #FFF;
   background-color: #2E2E2E;
   text-align: center;
 }
