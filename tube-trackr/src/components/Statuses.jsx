@@ -4,18 +4,18 @@ import Status from "./Status";
 import Title from "./Title";
 import Filters from "./Filters";
 
-function Lines({ title, api_url }) {
+function Statuses({ title, api_url }) {
 
-    const [lineData, setLineData] = useState([]);
+    const [statusData, setStatusData] = useState([]);
 
-    // Get line data from API
+    // Get status data from API
     useEffect(
-        function getLineData() {
+        function getStatusData() {
             axios
                 .get(api_url, {
                 })
                 .then(function (response) {
-                    setLineData(buildLineData(response.data));
+                    setStatusData(buildStatusData(response.data));
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -24,7 +24,7 @@ function Lines({ title, api_url }) {
     );
 
     // Convert API data to array
-    function buildLineData(apiData) {
+    function buildStatusData(apiData) {
 
         var array = [];
         const x = apiData
@@ -53,12 +53,12 @@ function Lines({ title, api_url }) {
     return (
         <div className='status-container'>
             <Title text={title + " Status"} />
-            <Filters lines={lineData} />
-            {lineData.map((line) => (
+            <Filters lines={statusData} />
+            {statusData.map((line) => (
                 <Status key={line.id} lineName={line.lineName} description={line.description} update={line.update} />
             ))}
         </div>
     );
 }
 
-export default Lines;
+export default Statuses;
