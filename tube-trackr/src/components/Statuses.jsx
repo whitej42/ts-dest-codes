@@ -20,7 +20,7 @@ function Statuses({ title, api_url }) {
                 .catch(function (error) {
                     console.log(error);
                 });
-        }, []
+        }, [api_url]
     );
 
     // Convert API data to array
@@ -60,7 +60,7 @@ function Statuses({ title, api_url }) {
 
     return (
         <div className='status-container'>
-            <Title text={title + " Status"} />
+            <Title text={title} />
             <Filters lines={statusData} />
             {statusData.map((line) => (
                 <Status key={line.id} lineName={line.lineName} severity={line.severity} update={line.update} />

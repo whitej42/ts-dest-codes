@@ -49,6 +49,13 @@ body {
   }
 }
 
+.title {
+  font-size: 24px;
+  text-align: center;
+  vertical-align: middle;
+  padding-bottom: 1rem;
+}
+
 .status {
   display: flex;
   border-top: solid 1px #808080;
@@ -72,11 +79,6 @@ body {
   float: right;
 }
 
-.title {
-  text-align: center;
-  padding-bottom: 1rem;
-}
-
 .update {
   padding: 10px;
   border-top: solid 1px #808080;
@@ -84,10 +86,14 @@ body {
   background-color: #faf5e1;;
 }
 
+.update a {
+  color: #0000fd;
+  text-decoration: none;
+}
+
 /* Filters */
 .filters-container {
   padding: 5px 0 5px 0;
-  /* border: solid #2E2E2E 1px; */
 }
 
 .filters {

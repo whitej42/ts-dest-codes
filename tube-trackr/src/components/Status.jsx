@@ -23,7 +23,7 @@ function Status({ lineName, severity, update }) {
             if (severity !== 'Good Service') {
                 setShowUpdate(true)
             }
-        }, []
+        }, [severity]
     );
 
     return (

@@ -10,7 +10,7 @@ function Update({ update, isActive }) {
             if (update.includes("http")) {
                 setUpdateLink(true)
             }
-        }, []
+        }, [update]
     )
 
     return (
