@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FaFilter } from 'react-icons/fa';
 
 function Filters( {lines} ) {
+    
     // Toggle filters button
     const [toggle, setToggle] = useState(false);
 

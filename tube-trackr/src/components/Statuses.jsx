@@ -34,20 +34,28 @@ function Statuses({ title, api_url }) {
             // Line object
             var obj = {};
 
-            // Get line name
+            var lineName = x[i]['name'];
+            var statusSeverity = x[i]['lineStatuses'][0]['statusSeverityDescription'];
+            var statusUpdate = x[i]['lineStatuses'][0]['reason'];
+            
             obj["id"] = i;
-            obj["lineName"] = x[i]['name'];
-
-            // Get status description
-            obj["description"] = x[i]['lineStatuses'][0]['statusSeverityDescription'];
-
-            // Get status update
-            obj["update"] = x[i]['lineStatuses'][0]['reason'];
+            obj["lineName"] = lineName;
+            obj["severity"] = statusSeverity;
+            obj["update"] = checkUndefined(statusUpdate);
 
             // Create line object
             array.push(obj);
         }
+        console.log(array)
         return (array);
+    }
+
+    // Check if string is undefined
+    function checkUndefined(string) {
+        if (typeof string === 'undefined') {
+            return '';
+        }
+        return string
     }
 
     return (
@@ -55,7 +63,7 @@ function Statuses({ title, api_url }) {
             <Title text={title + " Status"} />
             <Filters lines={statusData} />
             {statusData.map((line) => (
-                <Status key={line.id} lineName={line.lineName} description={line.description} update={line.update} />
+                <Status key={line.id} lineName={line.lineName} severity={line.severity} update={line.update} />
             ))}
         </div>
     );
