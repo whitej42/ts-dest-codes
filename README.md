@@ -17,7 +17,7 @@ git clone https://github.com/whitej42/tube-tracker-site.git
 ```
 cd tube-trackr
 ```
-3. Run the app in the development mode.
+3. Start development server.
 ```
 npm start
 ```
