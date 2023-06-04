@@ -33,7 +33,7 @@ function Filters( {lines} ) {
                 <></>
             }
 
-            <p>{`Test: You selected ${option}`}</p>
+            {/* <p>{`Test: You selected ${option}`}</p> */}
         </div>
     )
 }
