@@ -23,7 +23,7 @@ function Filters( {lines} ) {
             {toggle ?
                 <div className='filters'>
                     <select name='lines' id='lines' className='dropdown' onChange={handleChange}>
-                        <option value="">Any Line</option>
+                        <option value="*">Any Line</option>
                         {lines.map((line) => (
                             <option key={line.key} value={line.id}>{line.lineName}</option>
                         ))}
@@ -33,7 +33,7 @@ function Filters( {lines} ) {
                 <></>
             }
 
-            {/* <p>{`Test: You selected ${option}`}</p> */}
+            <p>{`Test: You selected ${option}`}</p>
         </div>
     )
 }
