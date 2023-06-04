@@ -1,5 +1,5 @@
 # Tube Tracker Website
-Website displaying live London Underground, National Rail and River Boat service status. Polls data from the (https://api-portal.tfl.gov.uk/apis)[Unified TFL API].
+Website displaying live London Underground, National Rail and River Boat service status. Polls data from the [Unified TFL API](https://api-portal.tfl.gov.uk/apis).
 
 Built using React.
 
