@@ -34,19 +34,20 @@ function Statuses({ title, api_url }) {
             // Line object
             var obj = {};
 
+            // Array variables
             var lineName = x[i]['name'];
             var statusSeverity = x[i]['lineStatuses'][0]['statusSeverityDescription'];
             var statusUpdate = x[i]['lineStatuses'][0]['reason'];
             
+            // Sort valiues into array
             obj["id"] = i;
             obj["lineName"] = lineName;
             obj["severity"] = statusSeverity;
             obj["update"] = checkUndefined(statusUpdate);
 
-            // Create line object
+            // Push to array
             array.push(obj);
         }
-        console.log(array)
         return (array);
     }
 

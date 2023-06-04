@@ -16,9 +16,10 @@ function Title({ text }) {
   }
 
   return (
-    <h2 className='title'>
-      {text} Status {setIcon()}
-    </h2>
+    <div className="title">
+      <h2>{text} Status</h2>
+      <label className="icon">{setIcon()}</label>
+    </div>
   )
 }
 
