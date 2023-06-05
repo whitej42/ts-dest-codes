@@ -3,7 +3,7 @@ Website displaying live London Underground, National Rail and River Boat service
 
 Built using React.
 
-![Tube service updates](https://github.com/whitej42/tube-tracker-site/blob/line-details/tube-trackr/src/img/tube-screenshot.png)
+![Tube service updates](https://github.com/whitej42/tube-tracker-site/blob/main/tube-trackr/src/img/tube-screenshot.png)
 
 ## Status
 **Under Development**
