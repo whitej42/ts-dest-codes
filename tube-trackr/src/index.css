@@ -25,23 +25,46 @@ body {
 
 /* Body Container */
 .container {
-  padding: 2rem;
+  padding: 2em 2em 1em 2em;
 }
 
 /* Buttons */
 .btn {
   color: lightslategrey;
-  vertical-align: middle;
   cursor: pointer;
+}
+
+.btn :hover {
+  color: #FFF;
+}
+
+.icon {
+  vertical-align: middle;
+  margin-left: 5px;
 }
 
 /* Line Status */
 .status-container {
   background-color: #444444;
-  max-width: 25%; 
   border-radius: 4px;
-  padding: 2rem;
-  margin-bottom: 1rem;
+  padding: 2em;
+  margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 1200px) {
+  .status-container {
+    max-width: 25%;
+  }
+}
+
+.title {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.title * {
+  font-size: 24px;
+  display: inline-block;
 }
 
 .status {
@@ -67,11 +90,6 @@ body {
   float: right;
 }
 
-.title {
-  text-align: center;
-  padding-bottom: 1rem;
-}
-
 .update {
   padding: 10px;
   border-top: solid 1px #808080;
@@ -79,10 +97,14 @@ body {
   background-color: #faf5e1;;
 }
 
+.update a {
+  color: #0000fd;
+  text-decoration: none;
+}
+
 /* Filters */
 .filters-container {
   padding: 5px 0 5px 0;
-  /* border: solid #2E2E2E 1px; */
 }
 
 .filters {

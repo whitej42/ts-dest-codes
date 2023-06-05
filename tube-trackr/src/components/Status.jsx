@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Update from './Update';
 
-function Status({ lineName, description, update }) {
+function Status({ lineName, severity, update }) {
 
     // Set css classes
     const nameClasses = `line-name ${lineName.toLowerCase().split(' & ').join(' ').split(' ').join('-')}`;
-    const statusClasses = `line-status ${description.toLowerCase().split(' ').join('-')}`;
+    const statusClasses = `line-status ${severity.toLowerCase().split(' ').join('-')}`;
 
     // Toggle show updates button
     const [toggle, setToggle] = useState(false);
@@ -20,10 +20,10 @@ function Status({ lineName, description, update }) {
 
     useEffect(
         function getUpdates() {
-            if (description !== 'Good Service') {
+            if (severity !== 'Good Service') {
                 setShowUpdate(true)
             }
-        }, []
+        }, [severity]
     );
 
     return (
@@ -33,7 +33,7 @@ function Status({ lineName, description, update }) {
                     <label>{lineName}</label>
                 </div>
                 <div className={statusClasses}>
-                    <label>{description}</label>
+                    <label>{severity}</label>
                     {showUpdate ?
                         <div className="btn" onClick={handleClick}>{toggle ? <FaChevronUp /> : <FaChevronDown />}</div>
                         :
