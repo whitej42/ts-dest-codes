@@ -1,9 +1,9 @@
-# Tube Tracker Website
-Website displaying live London Underground, National Rail and River Boat service status. Polls data from the [Unified TFL API](https://api-portal.tfl.gov.uk/apis).
+# Train Sim Destination Codes Website
+Website listing destination codes for locomotives in Train Simulator Classic Scenario Editor. Also displays live London Underground, National Rail and River Boat service status (because why not). Polls data from the [Unified TFL API](https://api-portal.tfl.gov.uk/apis).
 
 Built using React.
 
-![Tube service updates](https://github.com/whitej42/tube-tracker-site/blob/main/tube-trackr/src/img/tube-screenshot.png)
+![Website Screenshot](https://github.com/whitej42/tube-tracker-site/blob/main/tube-trackr/src/img/website-screenshot.png)
 
 ## Status
 **Under Development**
