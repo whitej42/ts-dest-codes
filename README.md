@@ -3,7 +3,7 @@ Website listing destination codes for locomotives in Train Simulator Classic Sce
 
 Built using React.
 
-![Website Screenshot](https://github.com/whitej42/tube-tracker-site/blob/main/tube-trackr/src/img/website-screenshot.png)
+![Website Screenshot](https://github.com/whitej42/ts-dest-codes/blob/main/ts-dest-codes/src/img/website-screenshot.png)
 
 ## Status
 **Under Development**
@@ -11,11 +11,11 @@ Built using React.
 ## Getting Started
 1. Clone the repository
 ```
-git clone https://github.com/whitej42/tube-tracker-site.git
+git clone https://github.com/whitej42/ts-dest-codes.git
 ```
 2. Change into tube-trackr directory
 ```
-cd tube-trackr
+cd ts-dest-codes
 ```
 3. Start development server.
 ```
