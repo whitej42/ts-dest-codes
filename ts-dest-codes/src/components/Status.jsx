@@ -11,10 +11,6 @@ function Status({ lineName, severity, update }) {
     // Toggle show updates button
     const [toggle, setToggle] = useState(false);
 
-    const handleClick = () => {
-        setToggle(!toggle);
-    };
-
     // Show toggle status update button
     const [showUpdate, setShowUpdate] = useState(false);
 
@@ -34,10 +30,8 @@ function Status({ lineName, severity, update }) {
                 </div>
                 <div className={statusClasses}>
                     <label>{severity}</label>
-                    {showUpdate ?
-                        <div className="btn" onClick={handleClick}>{toggle ? <FaChevronUp /> : <FaChevronDown />}</div>
-                        :
-                        <></>
+                    {showUpdate &&
+                        <div className="btn" onClick={() => setToggle(!toggle)}>{toggle ? <FaChevronUp /> : <FaChevronDown />}</div>
                     }
                 </div>
             </div>

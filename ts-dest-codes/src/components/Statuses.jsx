@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import Status from "./Status";
-import Title from "./Title";
-import Filters from "./Filters";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 function Statuses({ title, api_url }) {
+
+    // Toggle status button
+    const [toggle, setToggle] = useState(false);
 
     const [statusData, setStatusData] = useState([]);
 
@@ -39,7 +41,7 @@ function Statuses({ title, api_url }) {
             var statusSeverity = x[i]['lineStatuses'][0]['statusSeverityDescription'];
             var statusUpdate = x[i]['lineStatuses'][0]['reason'];
             
-            // Sort valiues into array
+            // Sort values into array
             obj["id"] = i;
             obj["lineName"] = lineName;
             obj["severity"] = statusSeverity;
@@ -61,11 +63,17 @@ function Statuses({ title, api_url }) {
 
     return (
         <div className='status-container'>
-            <Title text={title} />
-            <Filters lines={statusData} />
-            {statusData.map((line) => (
-                <Status key={line.id} lineName={line.lineName} severity={line.severity} update={line.update} />
-            ))}
+            <div className="status-title" onClick={() => setToggle(!toggle)} >
+                {title}
+                <div className='btn btn-show icon'>{toggle ? <FaMinus /> : <FaPlus />}</div>
+            </div>
+            {toggle &&
+                <div className="lines-container">
+                {statusData.map((line) => (
+                    <Status key={line.id} lineName={line.lineName} severity={line.severity} update={line.update} />
+                ))}
+                </div>
+            }
         </div>
     );
 }

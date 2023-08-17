@@ -1,0 +1,210 @@
+/* -- Global -- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #222222;
+  color: #FFF;;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #cccccc; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #808080; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  text-align: center;
+  background-color: #2E2E2E;
+}
+
+.sidebar {
+  background-color: #2E2E2E;
+  width: 400px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+  overflow-y: scroll;
+}
+
+.sidebar.active {
+  left: 0;
+  transition: 450ms;
+}
+
+.nav-list li {
+  list-style: none;
+}
+
+.btn-menu {
+  font-size: 1.5rem;
+  float: left;
+}
+
+.btn-times {
+  font-size: 1.5rem;
+}
+
+.nav-toggle {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+/* Body Container */
+.container {
+  min-height: 100vh;
+  padding: 2em 2em 1em 2em;
+}
+
+.network-title {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  font-size: 20px;
+}
+
+/* Buttons */
+.btn {
+  color: lightslategrey;
+  cursor: pointer;
+}
+
+.btn :hover {
+  color: #FFF;
+}
+
+.icon {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+/* Line Status */
+.status-container {
+  border-top: solid 2px #808080;
+  padding: 1em;
+}
+
+.status-title {
+  font-size: 18;
+  cursor: pointer;
+}
+
+.btn-show {
+  float: right;
+}
+
+.lines-container {
+  padding-top: 1rem;
+}
+
+.status {
+  display: flex;
+  border-top: solid 1px #808080;
+}
+
+.status label {
+  cursor: text;
+}
+
+.line-name {
+  flex: 60%;
+  padding: 10px;
+}
+
+.line-status {
+  flex: 40%;
+  padding: 10px;
+}
+
+.status .btn {
+  float: right;
+}
+
+.update {
+  padding: 10px;
+  border-top: solid 1px #808080;
+  color: #222222;
+  background-color: #faf5e1;;
+}
+
+.update a {
+  color: #0000fd;
+  text-decoration: none;
+}
+
+/* Accordion */
+.accordion {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.accordion-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #2E2E2E;
+}
+
+.accordion-title:hover {
+  background-color: #404040;
+}
+
+.accordion-title,
+.accordion-content {
+  padding: 1rem;
+}
+
+.accordion-content {
+  background-color: #404040;
+}
+
+.train-info {
+  margin-bottom: 0.5rem;
+  font-size: 20px;
+  text-align: right;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+/* Footer */
+.footer {
+  bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  background-color: #2E2E2E;
+  text-align: center;
+}
