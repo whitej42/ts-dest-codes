@@ -1,4 +1,6 @@
 # Train Sim Destination Codes Website
+I like trains :station:
+
 Website listing destination codes for locomotives in Train Simulator Classic Scenario Editor. Also displays live London Underground, National Rail and River Boat service status (because why not). Polls data from the [Unified TFL API](https://api-portal.tfl.gov.uk/apis).
 
 Built using React.
