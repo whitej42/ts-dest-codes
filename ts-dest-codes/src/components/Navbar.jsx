@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Statuses from "./Statuses";
-import { Link } from "react-router-dom";
 
 function Navbar() {
 
@@ -12,20 +11,16 @@ function Navbar() {
     // Toggle sidebar button
     const [sidebar, setSidebar] = useState(false);
 
-    const showSidebar = () => {
-        setSidebar(!sidebar);
-    };
-
   return (
     <>
         <div className="navbar">
-            <h1>TubeTrackr
-            <div onClick={showSidebar} className='btn btn-menu'><FaBars /></div>
-            </h1>
+            <h2>Train Sim Classic Destination Codes
+                <div onClick={() => setSidebar(!sidebar)} className='btn btn-menu'><FaBars /></div>
+            </h2>
         </div>
         <nav className={sidebar ? "sidebar active" : "sidebar"}>
             <div className="nav-toggle">
-                <div onClick={showSidebar} className='btn'><FaTimes /></div>
+                <div onClick={() => setSidebar(!sidebar)} className='btn btn-times'><FaTimes /></div>
             </div>
             <h2 className="network-title">Network Status</h2>
             <Statuses title={"Tube"} api_url={ tube_api } />

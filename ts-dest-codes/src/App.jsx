@@ -1,5 +1,6 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import Accordian from "./components/Accordian";
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Navbar />
       <div className='container'>
+        <Accordian />
       </div>
       <Footer />
     </div>

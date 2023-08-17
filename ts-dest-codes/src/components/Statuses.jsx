@@ -8,10 +8,6 @@ function Statuses({ title, api_url }) {
     // Toggle status button
     const [toggle, setToggle] = useState(false);
 
-    const handleClick = () => {
-        setToggle(!toggle);
-    };
-
     const [statusData, setStatusData] = useState([]);
 
     // Get status data from API
@@ -45,7 +41,7 @@ function Statuses({ title, api_url }) {
             var statusSeverity = x[i]['lineStatuses'][0]['statusSeverityDescription'];
             var statusUpdate = x[i]['lineStatuses'][0]['reason'];
             
-            // Sort valiues into array
+            // Sort values into array
             obj["id"] = i;
             obj["lineName"] = lineName;
             obj["severity"] = statusSeverity;
@@ -67,18 +63,16 @@ function Statuses({ title, api_url }) {
 
     return (
         <div className='status-container'>
-            <div className="status-title">
+            <div className="status-title" onClick={() => setToggle(!toggle)} >
                 {title}
-                <div onClick={handleClick} className='btn btn-show icon'>{toggle ? <FaMinus /> : <FaPlus />}</div>
+                <div className='btn btn-show icon'>{toggle ? <FaMinus /> : <FaPlus />}</div>
             </div>
-            {toggle ?
+            {toggle &&
                 <div className="lines-container">
                 {statusData.map((line) => (
                     <Status key={line.id} lineName={line.lineName} severity={line.severity} update={line.update} />
                 ))}
                 </div>
-                :
-                <></>
             }
         </div>
     );
