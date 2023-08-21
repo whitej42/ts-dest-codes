@@ -14,19 +14,25 @@ function Accordian_Item({ loco }) {
             {toggle &&
                 <div className="accordion-content">
                     <div className="train-info">
-                        <FaInfoCircle />
+                        {loco.description}
+                        <div className="btn btn-modal"><FaInfoCircle /></div>
                     </div>
                     <table>
-                        <tr>
-                            <th>Destination Code</th>
-                            <th>Destination</th>
-                        </tr>
-                        {loco['destinations'].map((dest) => (
+                        <thead>
                             <tr>
-                                <td>{dest.id}</td>
-                                <td>{dest.stop}</td>
+                                <th>Destination Code</th>
+                                <th>Destination</th>
+
                             </tr>
-                        ))}
+                        </thead>
+                        <tbody>
+                            {loco['destinations'].map((dest) => (
+                                <tr key={dest.id}>
+                                    <td>{dest.id}</td>
+                                    <td>{dest.stop}</td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </table>
                 </div>
             }
