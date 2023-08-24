@@ -230,8 +230,9 @@ body {
 
 .search-bar {
   font-size: 16px;
-  padding: 2px;
+  padding: 5px;
   color: #FFF;
+  width: 250px;
   background-color: #808080;
   border: solid 1px #808080;
   border-radius: 2px;
