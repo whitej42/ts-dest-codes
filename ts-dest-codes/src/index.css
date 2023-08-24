@@ -41,6 +41,29 @@ body {
   background-color: #2E2E2E;
 }
 
+.dark-mode {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.btn-dark-mode {
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-dark-mode.active {
+  color: lightslategrey;
+}
+
+.dark-mode-text {
+  color: #FFF;
+  font-size: 1rem;
+}
+
+/* Sidebar */
 .sidebar {
   background-color: #2E2E2E;
   width: 400px;
@@ -57,10 +80,6 @@ body {
   transition: 450ms;
 }
 
-.nav-list li {
-  list-style: none;
-}
-
 .btn-menu {
   font-size: 1.5rem;
   float: left;
@@ -75,10 +94,26 @@ body {
   padding: 1rem;
 }
 
-/* Body Container */
-.container {
-  min-height: 100vh;
-  padding: 2em 2em 1em 2em;
+.icon-bar {
+  margin: 10px auto;
+  padding: 1em;
+}
+
+.icon-list {
+  list-style-type: none;
+}
+
+.icon-list li {
+    display: inline-block;
+    padding-right: 1em;
+    font-size: 1.5rem;
+}
+
+.insta-embed {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  /* height: 62vh; */
 }
 
 .network-title {
@@ -87,7 +122,12 @@ body {
   font-size: 20px;
 }
 
-/* Buttons */
+.contact-title {
+  padding-bottom: 1rem;
+  font-size: 20px;
+}
+
+/* Buttons General*/
 .btn {
   color: lightslategrey;
   cursor: pointer;
@@ -102,6 +142,10 @@ body {
   margin-left: 5px;
 }
 
+/* .hover:hover {
+  transform: translateY(-10px);
+} */
+
 /* Line Status */
 .status-container {
   border-top: solid 2px #808080;
@@ -109,7 +153,7 @@ body {
 }
 
 .status-title {
-  font-size: 18;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -156,10 +200,45 @@ body {
   text-decoration: none;
 }
 
+/* Body Container */
+.container {
+  min-height: 100vh;
+}
+
+.welcome-message {
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.welcome-text {
+  padding-top: 1em;
+}
+
 /* Accordion */
 .accordion {
   max-width: 800px;
-  margin: 2rem auto;
+  margin: 1rem auto;
+}
+
+.accordian-search {
+  padding: 0.8rem;
+  background-color: #2E2E2E;
+  border-bottom: solid 1px #808080;
+  border-top: solid 1px  #808080;
+}
+
+.search-bar {
+  font-size: 16px;
+  padding: 2px;
+  color: #FFF;
+  background-color: #808080;
+  border: solid 1px #808080;
+  border-radius: 2px;
+}
+
+.search-bar::placeholder{
+  color: #2E2E2E;
 }
 
 .accordion-title {
@@ -171,7 +250,7 @@ body {
 }
 
 .accordion-title:hover {
-  background-color: #404040;
+  background-color: #2E2E2E;
 }
 
 .accordion-title,
@@ -184,9 +263,16 @@ body {
 }
 
 .train-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* padding-top: 10px; */
+  /* padding-bottom: 1rem; */
+}
+
+.btn-modal {
   margin-bottom: 0.5rem;
   font-size: 20px;
-  text-align: right;
 }
 
 table {
