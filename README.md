@@ -15,7 +15,7 @@ Built using React.
 ```
 git clone https://github.com/whitej42/ts-dest-codes.git
 ```
-2. Change into tube-trackr directory
+2. Change into ts-dest-codes directory
 ```
 cd ts-dest-codes
 ```
