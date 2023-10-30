@@ -3,7 +3,7 @@ function Welcome() {
     <div className="welcome-message">
       <h2>Welcome Train Simmers!</h2>
       <div className="welcome-text">
-        --- This site is still under development. Some feature may not work as expected ---
+        ### This site is still under development. Some features may not work as expected ###
       </div>
     </div>
   )
