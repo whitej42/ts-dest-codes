@@ -19,7 +19,7 @@ function Navbar() {
     return (
         <>
             <div className="navbar">
-                <h2>Train Sim Classic Destination Codes
+                <h2>Train Sim Classic - Destination Codes
                     <div onClick={() => setSidebar(!sidebar)} className='btn btn-menu'><FaBars /></div>
                     <div onClick={() => setdarkMode(!darkMode)} className="dark-mode">
                         <div className={darkMode ? "btn-dark-mode" : "btn-dark-mode active"}>{darkMode ? <FaSun /> : <FaMoon />}</div>
