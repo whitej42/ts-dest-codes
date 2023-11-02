@@ -228,17 +228,17 @@ body {
   border-top: solid 1px  #808080;
 }
 
-.search-bar {
+#search {
   font-size: 16px;
-  padding: 5px;   
+  padding: 10px;   
   color: #FFF;
-  width: 250px;
+  width: 100%;
   background-color: #808080;
   border: solid 1px #808080;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
-.search-bar::placeholder{
+#search::placeholder{
   color: #2E2E2E;
 }
 

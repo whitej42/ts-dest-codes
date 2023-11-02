@@ -1024,84 +1024,9 @@
 		]
 	},
 	{
-		"key": "80994",
-		"name": "JT Met S8 Stock - Metropolitan Line",
-		"description" : "JT Met S8 Stock Metropolitan Line - AI HUD",
-		"destinations": [
-			{"id": "1", "stop": "Aldgate"},
-			{"id": "2", "stop": "Amersham"},
-			{"id": "3", "stop": "Baker Street"},
-			{"id": "4", "stop": "Chesham"},
-			{"id": "5", "stop": "Uxbridge"},
-			{"id": "6", "stop": "Watford"},
-			{"id": "7", "stop": "Harrow-on-the-Hill"},
-			{"id": "8", "stop": "Wembley Park"},
-			{"id": "9", "stop": "Not in Service"}
-		]
-	},
-	{
-		"key": "00000",
-		"name": "Class 170 - Scotrail",
-		"description" : "BR Class 170 Turbostar DMU Add-On",
-		"destinations": [
-			{"id": "a", "stop": "Example"},
-			{"id": "b", "stop": "Example"},
-			{"id": "c", "stop": "Example"},
-			{"id": "d", "stop": "Example"},
-			{"id": "e", "stop": "Example"},
-			{"id": "f", "stop": "Example"},
-			{"id": "g", "stop": "Example"},
-			{"id": "h", "stop": "Example"},
-			{"id": "i", "stop": "Example"},
-			{"id": "j", "stop": "Example"},
-			{"id": "k", "stop": "Example"},
-			{"id": "l", "stop": "Example"},
-			{"id": "m", "stop": "Example"},
-			{"id": "n", "stop": "Example"},
-			{"id": "o", "stop": "Example"},
-			{"id": "p", "stop": "Example"},
-			{"id": "q", "stop": "Example"},
-			{"id": "r", "stop": "Example"},
-			{"id": "s", "stop": "Example"},
-			{"id": "t", "stop": "Example"},
-			{"id": "u", "stop": "Example"},
-			{"id": "v", "stop": "Example"},
-			{"id": "w", "stop": "Example"},
-			{"id": "x", "stop": "Example"},
-			{"id": "y", "stop": "Example"},
-			{"id": "z", "stop": "Example"},
-			{"id": "A", "stop": "Example"},
-			{"id": "B", "stop": "Example"},
-			{"id": "C", "stop": "Example"},
-			{"id": "D", "stop": "Example"},
-			{"id": "E", "stop": "Example"},
-			{"id": "F", "stop": "Example"},
-			{"id": "G", "stop": "Example"},
-			{"id": "H", "stop": "Example"},
-			{"id": "I", "stop": "Example"},
-			{"id": "J", "stop": "Example"},
-			{"id": "K", "stop": "Example"},
-			{"id": "L", "stop": "Example"},
-			{"id": "M", "stop": "Example"},
-			{"id": "N", "stop": "Example"},
-			{"id": "O", "stop": "Example"},
-			{"id": "P", "stop": "Example"},
-			{"id": "Q", "stop": "Example"},
-			{"id": "R", "stop": "Example"},
-			{"id": "S", "stop": "Example"},
-			{"id": "T", "stop": "Example"},
-			{"id": "U", "stop": "Example"},
-			{"id": "V", "stop": "Example"},
-			{"id": "W", "stop": "Example"},
-			{"id": "X", "stop": "Example"},
-			{"id": "Y", "stop": "Example"},
-			{"id": "Z", "stop": "Example"}
-		]
-	},
-	{
 		"key": "30289",
 		"name": "Class 170 Turbostar",
-		"description" : "Class 170 Turbostar. London Midland, XC, Central Trains, Southern & Strathclyde Partnership ",
+		"description" : "BR Class 170 Turbostar DMU Add-On. London Midland, XC, Central Trains, Southern & Strathclyde Partnership ",
 		"destinations": [
 			{"id": "a", "stop": "Class 170 Turbostart"},
 			{"id": "b", "stop": "Not in Service"},
@@ -1160,7 +1085,7 @@
 	{
 		"key": "35774",
 		"name": "Class 170 Turbostar - Scotrail",
-		"description" : "Class 170 Turbostar Scotrail",
+		"description" : "BR Class 170 Turbostar DMU Add-On",
 		"destinations": [
 			{"id": "a", "stop": "Class 170 Turbostart"},
 			{"id": "b", "stop": "Not in Service"},
@@ -1203,6 +1128,22 @@
 			{"id": "M", "stop": "Stranraer"},
 			{"id": "N", "stop": "Special"},
 			{"id": "O", "stop": "Thomson Interactive"}
+		]
+	},
+	{
+		"key": "80994",
+		"name": "JT Met S8 Stock - Metropolitan Line",
+		"description" : "JT Met S8 Stock Metropolitan Line - AI HUD",
+		"destinations": [
+			{"id": "1", "stop": "Aldgate"},
+			{"id": "2", "stop": "Amersham"},
+			{"id": "3", "stop": "Baker Street"},
+			{"id": "4", "stop": "Chesham"},
+			{"id": "5", "stop": "Uxbridge"},
+			{"id": "6", "stop": "Watford"},
+			{"id": "7", "stop": "Harrow-on-the-Hill"},
+			{"id": "8", "stop": "Wembley Park"},
+			{"id": "9", "stop": "Not in Service"}
 		]
 	}
 ]
