@@ -6,7 +6,7 @@ function Accordian() {
     return (
         <div className="accordion">
             <div className="accordian-search">
-                <input className="search-bar" type="text" id="search" name="search" placeholder="Search"/>
+                <input type="text" id="search" name="search" placeholder="Search"/>
             </div>
             {data.map((loco) => (
                 <AccordianItem key={loco['key']} loco={loco} />
