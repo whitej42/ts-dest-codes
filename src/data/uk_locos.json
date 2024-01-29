@@ -306,9 +306,9 @@
 		]
 	},
 	{
-		"key": "00000",
-		"name": "#####",
-		"description" : "#####",
+		"key": "83746",
+		"name": "AP Class 707 - Southeastern",
+		"description" : "https://www.armstrongpowerhouse.com/free_download/manuals/APC700EP_Manual.pdf",
 		"destinations": [
 			{"id": "a", "stop": "Blank"},
 			{"id": "b", "stop": "Barnehurst"},
