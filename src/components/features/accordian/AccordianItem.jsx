@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { FaMinus, FaPlus, FaInfoCircle } from "react-icons/fa";
+import { FaMinus, FaPlus, FaStar, FaExpandArrowsAlt } from "react-icons/fa";
+import './accordian.css';
 
-function Accordian_Item({ loco }) {
+function AccordianItem({ loco }) {
 
     const [toggle, setToggle] = useState(false);
 
@@ -9,20 +10,22 @@ function Accordian_Item({ loco }) {
         <div className="accordion-item">
             <div className="accordion-title" onClick={() => setToggle(!toggle)}>
                 <div>{loco['name']}</div>
-                <div>{toggle ? <FaMinus /> : <FaPlus />}</div>
+                <div>{toggle ? <FaMinus color="#ea6c74" /> : <FaPlus color="#1cbc9a" />}</div>
             </div>
             {toggle &&
-                <div className="accordion-content">
+                <div className={`accordion-content ${toggle ? 'show' : ''}`}>
                     <div className="train-info">
-                        {loco.description}
-                        <div className="btn btn-modal"><FaInfoCircle /></div>
+                        <div className="btn-favourite">
+                            <FaStar />
+                            <span className="btn-favourite-text">Favourite</span>
+                        </div>
+                        {/* {loco.description} */}
                     </div>
                     <table>
                         <thead>
                             <tr>
                                 <th>Destination Code</th>
                                 <th>Destination</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -40,4 +43,4 @@ function Accordian_Item({ loco }) {
     )
 }
 
-export default Accordian_Item
+export default AccordianItem

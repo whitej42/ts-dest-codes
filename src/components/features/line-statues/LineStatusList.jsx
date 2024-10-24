@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import Status from "./Status";
+import LineStatus from "./LineStatus";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import './colours.css';
+import './line-status.css';
 
-function Statuses({ title, api_url }) {
+function LineStatusList({ title, api_url }) {
 
     // Toggle status button
     const [toggle, setToggle] = useState(false);
@@ -44,8 +46,8 @@ function Statuses({ title, api_url }) {
             // Sort values into array
             obj["id"] = i;
             obj["lineName"] = lineName;
-            obj["severity"] = statusSeverity;
-            obj["update"] = checkUndefined(statusUpdate);
+            obj["statusSeverity"] = statusSeverity;
+            obj["statusUpdate"] = checkUndefined(statusUpdate);
 
             // Push to array
             array.push(obj);
@@ -70,7 +72,7 @@ function Statuses({ title, api_url }) {
             {toggle &&
                 <div className="lines-container">
                 {statusData.map((line) => (
-                    <Status key={line.id} lineName={line.lineName} severity={line.severity} update={line.update} />
+                    <LineStatus key={line.id} lineName={line.lineName} statusSeverity={line.statusSeverity} statusUpdate={line.statusUpdate} />
                 ))}
                 </div>
             }
@@ -78,4 +80,4 @@ function Statuses({ title, api_url }) {
     );
 }
 
-export default Statuses;
+export default LineStatusList;

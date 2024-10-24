@@ -1,4 +1,5 @@
-import data from "../data/uk_locos.json";
+import './accordian.css';
+import data from "../../../data/uk_locos.json";
 import AccordianItem from "./AccordianItem";
 
 function Accordian() {

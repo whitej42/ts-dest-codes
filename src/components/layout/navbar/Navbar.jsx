@@ -1,8 +1,9 @@
-import Statuses from "./Statuses";
+import LineStatusList from "../../features/line-statues/LineStatusList";
 import IconBar from "./IconBar";
 import { useState } from "react";
 import { FaBars, FaTimes, FaMoon, FaSun } from "react-icons/fa";
 import { InstagramEmbed } from 'react-social-media-embed';
+import './navbar.css';
 
 function Navbar() {
 
@@ -31,9 +32,9 @@ function Navbar() {
                     <div onClick={() => setSidebar(!sidebar)} className='btn btn-times'><FaTimes /></div>
                 </div>
                 <h2 className="network-title">Network Status</h2>
-                <Statuses title={"Tube"} api_url={tube_api} />
-                <Statuses title={"National Rail"} api_url={rail_api} />
-                <Statuses title={"TFL River Bus"} api_url={river_api} />
+                <LineStatusList title={"Tube"} api_url={tube_api} />
+                <LineStatusList title={"National Rail"} api_url={rail_api} />
+                <LineStatusList title={"TFL River Bus"} api_url={river_api} />
 
                 <IconBar />
 
