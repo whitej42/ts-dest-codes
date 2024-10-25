@@ -1,0 +1,72 @@
+/* Line Status */
+.status-container {
+  max-width: 800px;
+  border-top: solid 2px #808080;
+  padding: 1em;
+}
+
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.issue-count {
+  opacity: 0.5;
+  padding-top: 0.5rem;
+}
+
+.btn-show {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.lines-container {
+  padding-top: 1rem;
+}
+
+.status {
+  display: flex;
+  border-top: solid 1px #808080;
+}
+
+.status label {
+  cursor: text;
+}
+
+.line-name {
+  flex: 50%;
+  padding: 10px;
+}
+
+.line-status {
+  flex: 40%;
+  padding: 10px;
+}
+
+.status .btn {
+  float: right;
+}
+
+.update {
+  padding: 10px;
+  border-top: solid 1px #808080;
+  color: #222222;
+  background-color: #faf5e1;;
+}
+
+.update a {
+  color: #0000fd;
+  text-decoration: none;
+}

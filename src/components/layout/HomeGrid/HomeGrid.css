@@ -1,0 +1,44 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 20px;
+    max-width: 950px;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+}
+
+.card-text {
+    height: 25%;
+    padding: 10px;
+    transition: height 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.card:hover .card-text {
+    height: 100%;
+    opacity: 0.9;
+    position: absolute;
+}

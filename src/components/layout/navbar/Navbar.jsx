@@ -1,8 +1,10 @@
-import Statuses from "./Statuses";
-import IconBar from "./IconBar";
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import { FaBars, FaTimes, FaMoon, FaSun } from "react-icons/fa";
 import { InstagramEmbed } from 'react-social-media-embed';
+import LineStatusList from "../../features/LineStatus/LineStatusList";
+import IconBar from "./IconBar";
+import './Navbar.css';
 
 function Navbar() {
 
@@ -19,7 +21,7 @@ function Navbar() {
     return (
         <>
             <div className="navbar">
-                <h2>Train Sim Classic - Destination Codes
+                <h2>Train Sim Classic - Scenario Helper
                     <div onClick={() => setSidebar(!sidebar)} className='btn btn-menu'><FaBars /></div>
                     <div onClick={() => setdarkMode(!darkMode)} className="dark-mode">
                         <div className={darkMode ? "btn-dark-mode" : "btn-dark-mode active"}>{darkMode ? <FaSun /> : <FaMoon />}</div>
@@ -30,10 +32,16 @@ function Navbar() {
                 <div className="nav-toggle">
                     <div onClick={() => setSidebar(!sidebar)} className='btn btn-times'><FaTimes /></div>
                 </div>
-                <h2 className="network-title">Network Status</h2>
-                <Statuses title={"Tube"} api_url={tube_api} />
-                <Statuses title={"National Rail"} api_url={rail_api} />
-                <Statuses title={"TFL River Bus"} api_url={river_api} />
+                <ul className="nav-list">
+                    <li><Link to="/" className="no-text-decoration">Home</Link></li>
+                    <li><Link to="/destinations" className="no-text-decoration">Destination Codes</Link></li>
+                    <li><Link to="/headcodes" className="no-text-decoration">Headcode Generator</Link></li>
+                    <li><Link to="/lines" className="no-text-decoration">Routes</Link></li>
+                </ul>
+                <h2 className="network-title"><Link to="/status" className="no-text-decoration">Live Status Updates</Link></h2>
+                <LineStatusList title={"Tube"} api_url={tube_api} />
+                <LineStatusList title={"National Rail"} api_url={rail_api} />
+                <LineStatusList title={"TFL River Bus"} api_url={river_api} />
 
                 <IconBar />
 
