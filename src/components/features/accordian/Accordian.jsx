@@ -1,4 +1,4 @@
-import './accordian.css';
+import './Accordian.css';
 import data from "../../../data/uk_locos.json";
 import AccordianItem from "./AccordianItem";
 

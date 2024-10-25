@@ -60,6 +60,33 @@
   padding: 1rem;
 }
 
+.nav-list {
+  font-size: 20px;
+  color: #FFF;
+  padding: 1em;
+}
+
+.nav-list li {
+  list-style: none;
+  padding-bottom: 1rem;
+  transition: ease-in-out 0.2s;
+}
+
+.nav-list li:hover {
+  color: lightslategrey;
+}
+
+.network-title {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  font-size: 20px;
+  transition: ease-in-out 0.2s;
+}
+
+.network-title:hover {
+  color: lightslategrey;
+}
+
 .icon-bar {
   margin: 10px auto;
   padding: 1em;
@@ -82,12 +109,6 @@
   /* height: 62vh; */
 }
 
-.network-title {
-  padding-left: 1rem;
-  padding-bottom: 1rem;
-  font-size: 20px;
-}
-
 .contact-title {
   padding-bottom: 1rem;
   font-size: 20px;
@@ -97,6 +118,7 @@
 .btn {
   color: lightslategrey;
   cursor: pointer;
+  transition: ease-in-out 0.2s;
 }
 
 .btn:hover {

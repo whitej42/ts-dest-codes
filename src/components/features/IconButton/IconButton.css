@@ -1,0 +1,18 @@
+.icon-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 5px;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.icon-button-text {
+    margin-left: 5px;
+}
+
+.icon-button:hover {
+    color: #fff;
+    background-color: var(--base-color);
+}

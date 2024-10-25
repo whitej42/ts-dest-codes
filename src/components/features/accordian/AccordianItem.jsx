@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { FaMinus, FaPlus, FaStar, FaExpandArrowsAlt } from "react-icons/fa";
-import './accordian.css';
+import { FaMinus, FaPlus, FaStar, FaExpandArrowsAlt, FaInfoCircle } from "react-icons/fa";
+import './Accordian.css';
+import IconButton from '../IconButton/IconButton'
 
 function AccordianItem({ loco }) {
 
@@ -15,10 +16,21 @@ function AccordianItem({ loco }) {
             {toggle &&
                 <div className={`accordion-content ${toggle ? 'show' : ''}`}>
                     <div className="train-info">
-                        <div className="btn-favourite">
-                            <FaStar />
-                            <span className="btn-favourite-text">Favourite</span>
-                        </div>
+                    <IconButton
+                        icon={FaStar}
+                        text="Favourite"
+                        baseColor="#cbdf1d"
+                    />
+                    <IconButton
+                        icon={FaInfoCircle}
+                        text="More Info"
+                        baseColor="#1cbc9a"
+                    />
+                    <IconButton
+                        icon={FaExpandArrowsAlt}
+                        text="Full Screen"
+                        baseColor="#7caae6"
+                    />
                         {/* {loco.description} */}
                     </div>
                     <table>

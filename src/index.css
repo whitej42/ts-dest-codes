@@ -35,19 +35,35 @@ body {
 /* Body Container */
 .container {
   min-height: 100vh;
+  justify-items: center;
 }
 
 .welcome-message {
-  margin: 2rem auto;
   max-width: 800px;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
-.welcome-text {
-  padding-top: 1em;
+.dev-message {
   background-color: #e26a6b;
   padding: 20px;
   color: #FFF;
   border-radius: 5px;
-  margin-top: 1rem;
+  margin: 2rem;
+  max-width: 800px;
+  text-align: center;
+}
+
+.page-heading {
+  margin-bottom: 2rem;
+}
+
+.line-status-container {
+  margin: auto;
+  max-width: 800px;
+}
+
+.no-text-decoration {
+  text-decoration: none;
+  color: inherit;
 }

@@ -5,8 +5,6 @@ Website listing destination codes for locomotives in Train Simulator Classic Sce
 
 Built using React, test site hosted on AWS - [Test Site](https://main.dsalfe24ugk1r.amplifyapp.com/)
 
-![Website Screenshot](https://github.com/whitej42/ts-dest-codes/blob/main/src/img/website-screenshot.png)
-
 ## Status
 **Under Development**
 

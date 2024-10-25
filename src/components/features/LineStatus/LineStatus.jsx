@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import './line-status.css';
+import './LineStatus.css';
 
 function LineStatus({ lineName, statusSeverity, statusUpdate }) {
 
