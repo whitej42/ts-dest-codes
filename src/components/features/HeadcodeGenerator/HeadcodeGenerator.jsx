@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaArrowCircleRight, FaSave, FaEraser } from "react-icons/fa";
+import { FaArrowCircleRight, FaSave, FaTimes, FaRedo, FaCopy, FaEraser, FaRegEdit } from "react-icons/fa";
 import "./HeadcodeGenerator.css"
 import IconButton from '../IconButton/IconButton'
 
@@ -10,6 +10,9 @@ function HeadcodeGenerator() {
   const [headcode, setHeadcode] = useState("");
   const [randomLetter, setRandomLetter] = useState(false);
   const [randomService, setRandomService] = useState(false);
+  const [savedHeadcodes, setSavedHeadcodes] = useState([]);
+  const [warning, setWarning] = useState("");
+  const [copied, setCopied] = useState("");
 
   // Options for the train class dropdown
   const trainClassOptions = [
@@ -40,6 +43,9 @@ function HeadcodeGenerator() {
     let finalLetter = trainLetter;
     let finalServiceNumber = serviceNumber;
 
+    // Reset Warnings
+    setWarning("");
+
     // Generate random letter if checkbox is checked
     if (randomLetter) {
       finalLetter = getRandomLetter();
@@ -55,7 +61,8 @@ function HeadcodeGenerator() {
       const generatedHeadcode = `${trainClass}${finalLetter}${finalServiceNumber}`;
       setHeadcode(generatedHeadcode);
     } else {
-      alert("Please fill in all fields to generate a headcode.");
+      setWarning("Please fill in all fields to generate a headcode")
+      // alert("Please fill in all fields to generate a headcode.");
     }
   };
 
@@ -66,120 +73,193 @@ function HeadcodeGenerator() {
     setHeadcode("");
     setRandomLetter(false);
     setRandomService(false);
+    setWarning("");
+  }
+
+  const saveHeadcode = () => {
+    if (headcode === "") {
+      setWarning("Please Generate a Headcode First");
+      return;
+    }
+  
+    if (savedHeadcodes.includes(headcode)) {
+      setWarning("Cannot Save Duplicate Headcode");
+    } else {
+      setSavedHeadcodes([...savedHeadcodes, headcode]);
+      setWarning("");
+    }
+  };
+
+  const removeHeadcode = (headcodeToRemove) => {
+    setSavedHeadcodes(savedHeadcodes.filter((hc) => hc !== headcodeToRemove));
+  }
+
+  const copyToClipboard = (headcodeToCopy) => {
+    navigator.clipboard.writeText(headcodeToCopy)
+      .then(() => {
+        setCopied(headcodeToCopy);
+        setTimeout(() => setCopied(""), 2000);
+      })
+      .catch((error) => console.error("Copy failed", error));
+  };
+
+
+  const clearSaved= () =>{
+    setSavedHeadcodes([])
   }
 
   return (
-    <div className="generator-container">
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          generateHeadcode();
-        }}
-      > 
-        <div className="label">
-          <span className="label-title">Train Class:</span>
-          <select
-            value={trainClass}
-            onChange={(e) => setTrainClass(e.target.value)}
-            required>
-            <option value="" disabled>
-              Select Train Class
-            </option>
-            {trainClassOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-        </div>
-        <br />
-        <div className="label">
-          <span className="label-title">Train Letter (A-Z):</span>
-          <input className="text-input"
-            type="text"
-            maxLength="1"
-            value={trainLetter}
-            onChange={(e) => setTrainLetter(e.target.value)}
-            pattern="[A-Z]"
-            required={!randomLetter} // Make required if random is not selected
-            disabled={randomLetter}
-            placeholder={randomLetter ? "Random" : "Train Letter (A-Z)"}
-          />
-          <input className="checkbox"
-            type="checkbox"
-            checked={randomLetter}
-            onChange={() => {
-                setRandomLetter(prev => !prev);
-                if (!randomLetter) {
-                  setTrainLetter(""); // Clear input if checkbox is checked
-                }
-            }}
-          />
-            <span>Generate Random Letter</span>
-        </div>
-        <br />
-        <div className="label">
-        <span className="label-title">Service Number (00-99):</span>
-          <input className="text-input"
-            type="text"
-            maxLength="2"
-            value={serviceNumber}
-            onChange={(e) => setServiceNumber(e.target.value)}
-            pattern="[0-9]{2}"
-            required={!randomService} // Make required if random is not selected
-            disabled={randomService}
-            placeholder={randomService ? "Random" : "Service Number (00-99)"}
-          />
-          <input className="checkbox"
-            type="checkbox"
-            checked={randomService}
-            onChange={() => {
-                setRandomService(prev => !prev);
-                if (!randomService) {
-                  setServiceNumber(""); // Clear input if checkbox is checked
-                }
-              }}
-          />
-            <span>Generate Random Letter</span>
-        </div>
-        {headcode && (
-        <div>
-          <div className="headcode-response">
-            <h3>Generated Headcode: {headcode}</h3>
-                {randomLetter && !randomService && (
-                    <div className="regen-tip">Click Generate again to generate with a new letter code.</div>
-                )}
-                {randomService && !randomLetter && (
-                    <div className="regen-tip">Click Generate again to generate with a new service number.</div>
-                )}
-                {randomLetter && randomService && (
-                    <div className="regen-tip">Click Generate again to generate with a new letter and service number.</div>
-                )}
+    <>
+      <div className="generator-container">
+        {warning &&
+          <div className="warning-alert">
+            {warning}
           </div>
+        }
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            generateHeadcode();
+          }}
+        > 
+          <div className="label">
+            <span className="label-title">Train Class:</span>
+            <select
+              value={trainClass}
+              onChange={(e) => setTrainClass(e.target.value)}
+              required
+              className="form-input">
+              <option value="" disabled>
+                Select Train Class
+              </option>
+              {trainClassOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+          </div>
+          <br />
+          <div className="label">
+            <span className="label-title">Train Letter (A-Z):</span>
+            <input className="form-input"
+              type="text"
+              maxLength="1"
+              value={trainLetter}
+              onChange={(e) => setTrainLetter(e.target.value)}
+              pattern="[A-Z]"
+              required={!randomLetter} // Make required if random is not selected
+              disabled={randomLetter}
+              placeholder={randomLetter ? "Random" : "Train Letter (A-Z)"}
+            />
+            <input className="checkbox"
+              type="checkbox"
+              checked={randomLetter}
+              onChange={() => {
+                  setRandomLetter(prev => !prev);
+                  if (!randomLetter) {
+                    setTrainLetter(""); // Clear input if checkbox is checked
+                  }
+              }}
+            />
+              <span>Generate Random Letter</span>
+          </div>
+          <br />
+          <div className="label">
+          <span className="label-title">Service Number (00-99):</span>
+            <input className="form-input"
+              type="text"
+              maxLength="2"
+              value={serviceNumber}
+              onChange={(e) => setServiceNumber(e.target.value)}
+              pattern="[0-9]{2}"
+              required={!randomService} // Make required if random is not selected
+              disabled={randomService}
+              placeholder={randomService ? "Random" : "Service Number (00-99)"}
+            />
+            <input className="checkbox"
+              type="checkbox"
+              checked={randomService}
+              onChange={() => {
+                  setRandomService(prev => !prev);
+                  if (!randomService) {
+                    setServiceNumber(""); // Clear input if checkbox is checked
+                  }
+                }}
+            />
+              <span>Generate Random Letter</span>
+          </div>
+          {headcode && (
+          <div>
+            <div className="headcode-response">
+              <h3>Generated Headcode: {headcode}</h3>
+                  {randomLetter && !randomService && (
+                      <div className="regen-tip">*Click again to generate with a new letter code.</div>
+                  )}
+                  {randomService && !randomLetter && (
+                      <div className="regen-tip">*Click again to generate with a new service number.</div>
+                  )}
+                  {randomLetter && randomService && (
+                      <div className="regen-tip">*Click again to generate with a new letter and service number.</div>
+                  )}
+            </div>
+          </div>
+        )}
+          <div className="button-row">
+              <IconButton
+                  icon={FaArrowCircleRight}
+                  text="Generate"
+                  baseColor="#21b698"
+                  onClick={generateHeadcode}
+              />
+              <IconButton
+                  icon={FaSave}
+                  text="Save"
+                  baseColor="#cbdf1d"
+                  onClick={saveHeadcode}
+              />
+              <IconButton
+                  icon={FaRedo}
+                  text="Reset"
+                  baseColor="#e26a6b"
+                  onClick={clearFields}
+              />
+          </div>
+        </form>
+      </div>
+
+      {savedHeadcodes.length > 0 && (
+        <div className="generator-container saved">
+          <div className="label-title">Saved Headcodes</div>
+          <IconButton
+              icon={FaEraser}
+              text="Clear"
+              baseColor="#e26a6b"
+              onClick={clearSaved}
+          />
+          {copied !== "" && <span style={{ color: 'green' }}>Copied to Clipboard!</span>}
+          <ul>
+            {savedHeadcodes.map((headcode) => (
+              <li key={headcode}>
+                <IconButton
+                  icon={FaTimes}
+                  text="Remove"
+                  baseColor="#e26a6b"
+                  onClick={() => removeHeadcode(headcode)}
+              />
+                <IconButton
+                  icon={FaCopy}
+                  text="Copy"
+                  baseColor="#7caae6"
+                  onClick={() => copyToClipboard(headcode)}
+              />
+              <span className="saved-list-item">{headcode}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
-        <br />
-        <div className="button-row">
-            <IconButton
-                icon={FaArrowCircleRight}
-                text="Generate"
-                baseColor="#21b698"
-                onClick={generateHeadcode}
-            />
-            <IconButton
-                icon={FaSave}
-                text="Save"
-                baseColor="#cbdf1d"
-            />
-            <IconButton
-                icon={FaEraser}
-                text="Clear"
-                baseColor="#e26a6b"
-                onClick={clearFields}
-            />
-        </div>
-      </form>
-    </div>
+    </>
   );
 }
 
