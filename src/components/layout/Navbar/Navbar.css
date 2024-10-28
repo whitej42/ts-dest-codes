@@ -1,0 +1,132 @@
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  text-align: center;
+  background-color: #48505b;
+}
+
+.dark-mode {
+  float: right;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.btn-dark-mode {
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-dark-mode.active {
+  color: lightslategrey;
+}
+
+.dark-mode-text {
+  color: #FFF;
+  font-size: 1rem;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #2a3642;
+  width: 400px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+  overflow-y: scroll;
+}
+
+.sidebar.active {
+  left: 0;
+  transition: 450ms;
+  z-index: 1;
+}
+
+.btn-menu {
+  font-size: 1.5rem;
+  float: left;
+}
+
+.btn-times {
+  font-size: 1.5rem;
+}
+
+.nav-toggle {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.nav-list {
+  font-size: 20px;
+  color: #FFF;
+  padding: 1em;
+}
+
+.nav-list li {
+  list-style: none;
+  padding-bottom: 1rem;
+  transition: ease-in-out 0.2s;
+}
+
+.nav-list li:hover {
+  color: lightslategrey;
+}
+
+.network-title {
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  font-size: 20px;
+  transition: ease-in-out 0.2s;
+}
+
+.network-title:hover {
+  color: lightslategrey;
+}
+
+.icon-bar {
+  margin: 10px auto;
+  padding: 1em;
+}
+
+.icon-list {
+  list-style-type: none;
+}
+
+.icon-list li {
+    display: inline-block;
+    padding-right: 1em;
+    font-size: 1.5rem;
+}
+
+.insta-embed {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  /* height: 62vh; */
+}
+
+.contact-title {
+  padding-bottom: 1rem;
+  font-size: 20px;
+}
+
+/* Buttons General*/
+.btn {
+  color: lightslategrey;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+.btn:hover {
+  color: #FFF;
+}
+
+.icon {
+  vertical-align: middle;
+  margin-left: 5px;
+}
