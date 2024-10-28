@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import dest from '../../../assets/images/dest-board.png';
-import headcodes from '../../../assets/images/headcodes.png';
+import headcodes from '../../../assets/images/headcode.png';
 import routes from '../../../assets/images/routes.png';
-import status from '../../../assets/images/status-2.png';
+import status from '../../../assets/images/status.png';
+import guides from '../../../assets/images/guides.png';
 import './HomeGrid.css';
 
 function HomeGrid() {
@@ -10,7 +11,8 @@ function HomeGrid() {
         { id: 1, title: 'Destination Codes', to: '/destinations', imgSrc: dest, colour: '#FFD166' },
         { id: 2, title: 'Headcode Generator', to: '/headcodes', imgSrc: headcodes, colour: '#06D6A0' },
         { id: 3, title: 'Routes', to: '/lines', imgSrc: routes, colour: '#EF476F' },
-        { id: 4, title: 'Live Status Updates', to: '/status', imgSrc: status, colour: '#118AB2' }
+        { id: 4, title: 'Live Status Updates', to: '/status', imgSrc: status, colour: '#118AB2' },
+        { id: 5, title: 'Guides', to: '/status', imgSrc: guides, colour: '#8c66ff' }
     ];
 
     return (

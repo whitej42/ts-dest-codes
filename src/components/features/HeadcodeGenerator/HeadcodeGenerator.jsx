@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { FaArrowCircleRight, FaSave, FaTimes, FaRedo, FaCopy, FaEraser, FaRegEdit } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+import { FaInfoCircle, FaArrowCircleRight, FaSave, FaTimes, FaRedo, FaCopy, FaEraser } from "react-icons/fa";
 import "./HeadcodeGenerator.css"
 import IconButton from '../IconButton/IconButton'
 
@@ -11,8 +11,10 @@ function HeadcodeGenerator() {
   const [randomLetter, setRandomLetter] = useState(false);
   const [randomService, setRandomService] = useState(false);
   const [savedHeadcodes, setSavedHeadcodes] = useState([]);
+  const [customHeadcode, setCustomHeadcode] = useState("");
   const [warning, setWarning] = useState("");
   const [copied, setCopied] = useState("");
+  const [infoShow, setInfoShow] = useState(false);
 
   // Options for the train class dropdown
   const trainClassOptions = [
@@ -26,6 +28,17 @@ function HeadcodeGenerator() {
     { label: "8. Freight train which can run up to 35 mph", value: "8" },
     { label: "9. Other passenger trains if specially authorised e.g. Channel Tunnel and some Avanti services", value: "9" },
   ];
+
+  // Load local storage headcodes
+  useEffect(() => {
+    const storedHeadcodes = JSON.parse(localStorage.getItem("savedHeadcodes")) || [];
+    setSavedHeadcodes(storedHeadcodes);
+  }, []);
+
+  // Save headcodes to local storage 
+  useEffect(() => {
+    localStorage.setItem("savedHeadcodes", JSON.stringify(savedHeadcodes));
+  }, [savedHeadcodes]);
 
   // Function to generate a random letter
   const getRandomLetter = () => {
@@ -90,6 +103,20 @@ function HeadcodeGenerator() {
     }
   };
 
+  const saveCustomHeadcode = () => {
+      if (customHeadcode === "") {
+        setWarning("Please Enter a Headcode First");
+        return;
+      }
+    
+      if (savedHeadcodes.includes(customHeadcode)) {
+        setWarning("Cannot Save Duplicate Headcode");
+      } else {
+        setSavedHeadcodes([...savedHeadcodes, customHeadcode]);
+        setWarning("");
+      }
+    };
+
   const removeHeadcode = (headcodeToRemove) => {
     setSavedHeadcodes(savedHeadcodes.filter((hc) => hc !== headcodeToRemove));
   }
@@ -103,10 +130,14 @@ function HeadcodeGenerator() {
       .catch((error) => console.error("Copy failed", error));
   };
 
-
-  const clearSaved= () =>{
+  const clearSaved = () => {
     setSavedHeadcodes([])
+    localStorage.removeItem("savedHeadcodes");
   }
+
+  // const showInfo = () => {
+  //   setInfoShow(true)
+  // }
 
   return (
     <>
@@ -228,15 +259,37 @@ function HeadcodeGenerator() {
         </form>
       </div>
 
+      <div className="generator-container saved">
+      <div className="label-title">Save Custom Headcode</div>
+        <form>
+          <input className="form-input"
+          type="text"
+          maxLength="4"
+          value={customHeadcode}
+          onChange={(e) => setCustomHeadcode(e.target.value)}
+          placeholder={"Save Custom Headcode"}
+        />
+          <IconButton
+              icon={FaSave}
+              text="Save Custom Headcode"
+              baseColor="#cbdf1d"
+              onClick={saveCustomHeadcode}
+              className={"btn-save-custom"}
+          />
+        </form>
+      </div>
+
       {savedHeadcodes.length > 0 && (
         <div className="generator-container saved">
           <div className="label-title">Saved Headcodes</div>
-          <IconButton
-              icon={FaEraser}
-              text="Clear"
-              baseColor="#e26a6b"
-              onClick={clearSaved}
-          />
+          <div className="clear-all">
+            <IconButton
+                icon={FaEraser}
+                text="Clear all saved headcodes"
+                baseColor="#e26a6b"
+                onClick={clearSaved}
+            />
+          </div>
           {copied !== "" && <span style={{ color: 'green' }}>Copied to Clipboard!</span>}
           <ul>
             {savedHeadcodes.map((headcode) => (

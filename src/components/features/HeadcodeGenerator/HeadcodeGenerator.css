@@ -13,6 +13,10 @@
     margin-bottom: 10px;
 }
 
+.headcode-info {
+    float: right;
+    font-weight: normal;
+}
 
 .label {
     margin-bottom: 10px;
@@ -77,4 +81,14 @@
 
 .saved-list-item {
     min-width: 60px;
+}
+
+.clear-all {
+    border-bottom: solid 2px #48505b;
+    padding-bottom: 10px;
+    align-items: left;
+}
+
+.btn-save-custom {
+    margin-top: 10px;
 }
