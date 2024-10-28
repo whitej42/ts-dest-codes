@@ -10,9 +10,22 @@
 
 .icon-button-text {
     margin-left: 5px;
+    transition: color 0.2s ease-in-out,
+}
+
+.icon-button svg {
+    transition: color 0.2s ease-in-out,
 }
 
 .icon-button:hover {
     color: #fff;
     background-color: var(--base-color);
+}
+
+.icon-button:hover svg {
+    color: #fff;
+}
+
+.icon-button:hover .icon-button-text {
+    color: #fff;
 }

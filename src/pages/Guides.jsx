@@ -1,8 +1,8 @@
 function Guides() {
   return (
     <>
-      <h2>Guides</h2>
-    </>
+      <h2 className="page-heading">Guides</h2>
+      </>
   );
 }
 

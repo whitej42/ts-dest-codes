@@ -44,6 +44,7 @@
 .sidebar.active {
   left: 0;
   transition: 450ms;
+  z-index: 1;
 }
 
 .btn-menu {

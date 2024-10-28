@@ -37,6 +37,7 @@ function Navbar() {
                     <li><Link to="/destinations" className="no-text-decoration">Destination Codes</Link></li>
                     <li><Link to="/headcodes" className="no-text-decoration">Headcode Generator</Link></li>
                     <li><Link to="/lines" className="no-text-decoration">Routes</Link></li>
+                    <li><Link to="/guides" className="no-text-decoration">Guides</Link></li>
                 </ul>
                 <h2 className="network-title"><Link to="/status" className="no-text-decoration">Live Status Updates</Link></h2>
                 <LineStatusList title={"Tube"} api_url={tube_api} />

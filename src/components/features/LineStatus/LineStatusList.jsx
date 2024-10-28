@@ -13,7 +13,7 @@ function LineStatusList({ title, api_url, enabled }) {
     // If enabled show status list
     useEffect(
         function toggleEnabled() {
-            if (enabled == true) {
+            if (enabled === true) {
                 setToggle(true)
             }
         }, [enabled]
