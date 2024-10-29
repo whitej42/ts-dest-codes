@@ -282,15 +282,6 @@ function HeadcodeGenerator() {
       {savedHeadcodes.length > 0 && (
         <div className="generator-container saved">
           <div className="label-title">Saved Headcodes</div>
-          <div className="clear-all">
-            <IconButton
-                icon={FaEraser}
-                text="Clear all saved headcodes"
-                baseColor="#e26a6b"
-                onClick={clearSaved}
-                className={"btn-erase-custom"}
-            />
-          </div>
           {copied !== "" && <span style={{ color: 'green' }}>Copied to Clipboard!</span>}
           <ul>
             {savedHeadcodes.map((headcode) => (
@@ -311,6 +302,15 @@ function HeadcodeGenerator() {
               </li>
             ))}
           </ul>
+          <div className="clear-all">
+            <IconButton
+                icon={FaEraser}
+                text="Clear all saved headcodes"
+                baseColor="#e26a6b"
+                onClick={clearSaved}
+                className={"btn-erase-custom"}
+            />
+          </div>
         </div>
       )}
     </>
