@@ -81,6 +81,7 @@
 
 .saved-list-item {
     min-width: 60px;
+    max-width: 210px;
 }
 
 .clear-all {
@@ -91,4 +92,8 @@
 
 .btn-save-custom {
     margin-top: 10px;
+}
+
+.btn-erase-custom {
+    max-width: 225px;
 }
