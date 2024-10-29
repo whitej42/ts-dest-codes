@@ -85,13 +85,14 @@
 }
 
 .clear-all {
-    border-bottom: solid 2px #48505b;
-    padding-bottom: 10px;
+    border-top: solid 2px #48505b;
+    padding-top: 10px;
     align-items: left;
 }
 
 .btn-save-custom {
     margin-top: 10px;
+    max-width: 210px;
 }
 
 .btn-erase-custom {
