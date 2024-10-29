@@ -306,7 +306,7 @@ function HeadcodeGenerator() {
             <IconButton
                 icon={FaEraser}
                 text="Clear all saved headcodes"
-                baseColor="#e26a6b"
+                baseColor="#e2886a"
                 onClick={clearSaved}
                 className={"btn-erase-custom"}
             />
