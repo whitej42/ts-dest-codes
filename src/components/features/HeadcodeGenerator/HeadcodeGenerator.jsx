@@ -142,11 +142,6 @@ function HeadcodeGenerator() {
   return (
     <>
       <div className="generator-container">
-        {warning &&
-          <div className="warning-alert">
-            {warning}
-          </div>
-        }
         <form
           onSubmit={(e) => {
             e.preventDefault();
@@ -234,6 +229,11 @@ function HeadcodeGenerator() {
                       <div className="regen-tip">*Click again to generate with a new letter and service number.</div>
                   )}
             </div>
+            {warning &&
+              <div className="warning-alert">
+            {warning}
+          </div>
+        }
           </div>
         )}
           <div className="button-row">
