@@ -10,10 +10,17 @@
 .piccadilly {background-color: #0019a8;}
 .victoria {background-color: #00a0e2; color: #000;}
 .waterloo-city {background-color: #76d0bd; color: #000;}
-.london-overground {background-color: #e86a10; color: #000;}
 .elizabeth-line {background-color: #6950a1;}
 .dlr {background-color: #00afad; color: #000;}
 .tram {background-color: #66cc00;}
+
+/* Overground Colours */
+.lioness {background-color: #ffa600;}
+.liberty {background-color: #60686b;}
+.mildmay {background-color: #006fe5;}
+.suffragette {background-color: #18a95c;}
+.weaver {background-color: #9a0058;}
+.windrush {background-color: #db241e;}
 
 /* National Rail Colours */
 .avanti-west-coast {background-color: #1f4352}
