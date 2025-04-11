@@ -36,7 +36,11 @@
 }
 
 .accordion-title:hover {
-    background-color: #35414f;
+    background-color: #48505b;
+}
+
+.accordion-title.active {
+    background-color: #48505b;
 }
 
 .accordion-title,
@@ -48,6 +52,32 @@
     max-height: 500px;
     overflow-y: scroll;
     background-color: #48505b;
+}
+
+.accordion-content.full-height {
+    max-height: none;
+    height: 100vh;   
+}
+
+.operator-tabs {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.operator-tab {
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.operator-tab.active {
+    color: #1cbc9a;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
 }
 
 .train-info {

@@ -5,7 +5,7 @@ import { FaMinus, FaPlus } from "react-icons/fa";
 import './LineStatus.css';
 import './Colours.css';
 
-function LineStatusList({ title, api_url, enabled }) {
+function LineStatusList({ title, icon, api_url, enabled }) {
 
     const [toggle, setToggle] = useState(false);
     const [issueCount, setIssueCount] = useState(0);
@@ -68,7 +68,7 @@ function LineStatusList({ title, api_url, enabled }) {
         <div className='status-container'>
             <div className="status-header">
                 <div className="title-container">
-                    <span className="title">{title}</span>
+                    <span className="title">{title} {icon}</span>
                     <span className="issue-count">
                         {issueCount > 0 ? `${issueCount} line(s) with issues` : 'Good service on all lines'}
                     </span>

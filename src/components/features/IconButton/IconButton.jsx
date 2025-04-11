@@ -11,7 +11,7 @@ function IconButton({onClick, icon: Icon, text, baseColor, className }) {
                 borderColor: baseColor,
             }}
         >
-            <Icon />
+            {Icon && <Icon />}
             <span className="icon-button-text">{text}</span>
         </div>
     );
