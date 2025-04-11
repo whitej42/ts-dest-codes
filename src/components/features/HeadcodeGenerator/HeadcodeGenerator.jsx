@@ -75,7 +75,6 @@ function HeadcodeGenerator() {
       setHeadcode(generatedHeadcode);
     } else {
       setWarning("Please fill in all fields to generate a headcode")
-      // alert("Please fill in all fields to generate a headcode.");
     }
   };
 

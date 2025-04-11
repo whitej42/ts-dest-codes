@@ -21,7 +21,7 @@ function AccordianItem({ loco }) {
         <div className="accordion-item">
             <div className={`accordion-title ${toggleExpand ? 'active' :''}`} onClick={() => setToggleExpand(!toggleExpand)}>
                 <div>{loco['name']}</div>
-                <div>{toggleExpand ? <FaMinus color="#ea6c74" /> : <FaPlus color="#1cbc9a" />}</div>
+                <div>{toggleExpand ? <FaMinus /> : <FaPlus />}</div>
             </div>
             {toggleExpand &&
             <div className={`accordion-content ${toggleExpand ? 'show' : ''} ${fullHeight ? 'full-height' : ''}`}>

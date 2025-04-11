@@ -74,7 +74,7 @@ function LineStatusList({ title, icon, api_url, enabled }) {
                     </span>
                 </div>
                 <div className="btn btn-show icon" onClick={() => setToggle(!toggle)}>
-                    {toggle ? <FaMinus color="#ea6c74" /> : <FaPlus color="#1cbc9a" />}
+                    {toggle ? <FaMinus /> : <FaPlus />}
                 </div>
             </div>
 
