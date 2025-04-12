@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { FaMinus, FaPlus, FaStar, FaExpandArrowsAlt, FaInfoCircle, FaEyeSlash, FaEye } from "react-icons/fa";
+import { FaMinus, FaPlus, FaStar, FaExpandArrowsAlt, FaInfoCircle } from "react-icons/fa";
 import './Accordian.css';
 import IconButton from '../IconButton/IconButton'
-import { use } from "react";
 
 function AccordianItem({ loco }) {
 
@@ -11,7 +10,6 @@ function AccordianItem({ loco }) {
 
     const [toggleExpand, setToggleExpand] = useState(false);
     const [fullHeight, setFullHeight] = useState(false);
-    const [toggleHide, setToggleHide] = useState(false);
 
     const handleOperatorTabClick = (operator) => {
         setActiveOperator(operator);
